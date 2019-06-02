@@ -70,7 +70,7 @@
           <v-spacer/>
           <v-btn
             color="primary"
-            flat
+            text
             nuxt
             to="/inspire"
           >
@@ -78,7 +78,7 @@
           </v-btn>
           <v-btn
             color="primary"
-            flat
+            text
             @click="test"
           >
             Test

@@ -84,3 +84,6 @@ dist
 sw.*
 
 config.js
+.vscode/
+package-lock.json
+yarn.lock

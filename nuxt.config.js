@@ -28,14 +28,14 @@ const conf = {
   loading: { color: '#fff' },
 
   css: [
-    '~/assets/style/app.styl'
+    'vuetify/dist/vuetify.min.css'
   ],
   router: {
     middleware: ['ssr-cookie']
   },
 
   plugins: [
-    '@/plugins/vuetify',
+    // '@/plugins/vuetify',
     '@/plugins/socket'
   ],
 
@@ -43,18 +43,23 @@ const conf = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
+  devModules: [
+    '@nuxtjs/vuetify'
+  ],
   axios: {
     browserBaseURL: '/'
+  },
+
+  vuetify: {
+    theme: {
+      dark: true
+    }
   },
 
   build: {
     transpile: ['vuetify/lib'],
     plugins: [new VuetifyLoaderPlugin()],
-    loaders: {
-      stylus: {
-        import: ['~assets/style/variables.styl']
-      }
-    },
+    loaders: {},
     extend(config, ctx) {
       isDev = ctx.isDev
       if (ctx.isDev && ctx.isClient) {

@@ -75,7 +75,7 @@ if (process.env.DEVTYPE === 'frontend') { // only dev frontend
   )
 }
 
-async function start() {
+async function start () {
   const nuxt = new Nuxt(nuxtConfig)
   const { host, port } = nuxt.options.server
   if (process.env.DEVTYPE !== 'backend') {

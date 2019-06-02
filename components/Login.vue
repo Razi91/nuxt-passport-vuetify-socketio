@@ -4,11 +4,11 @@
       v-btn(color='primary', dark='', v-on='on')
         | Sign up
     v-list
-      v-list-tile
+      v-list-item
         v-text-field(v-model='form.username', label='User name:')
-      v-list-tile
+      v-list-item
         v-text-field(v-model='form.password', type='password', label='Password:')
-      v-list-tile
+      v-list-item
         v-btn(@click='login')
           | Sign in
         v-btn(to='/register')
