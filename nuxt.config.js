@@ -36,17 +36,18 @@ const conf = {
   },
 
   plugins: [
-    // '@/plugins/vuetify',
+    '@/plugins/vuetify',
     '@/plugins/socket'
   ],
 
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
-  ],
-  devModules: [
+    '@nuxtjs/pwa',
     '@nuxtjs/vuetify'
   ],
+  devModules: isDev ? [
+    '@nuxtjs/vuetify'
+  ] : [],
   axios: {
     browserBaseURL: '/'
   },
@@ -59,7 +60,7 @@ const conf = {
 
   build: {
     transpile: ['vuetify/lib'],
-    plugins: [new VuetifyLoaderPlugin()],
+    // plugins: [new VuetifyLoaderPlugin()],
     loaders: {},
     extend (config, ctx) {
       isDev = ctx.isDev
@@ -71,6 +72,8 @@ const conf = {
           exclude: /(node_modules)/
         })
       }
+      ctx.loaders.scss.implementation = require('sass')
+      ctx.loaders.sass.implementation = require('sass')
     }
   },
   env: {
