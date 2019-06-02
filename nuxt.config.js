@@ -28,7 +28,8 @@ const conf = {
   loading: { color: '#fff' },
 
   css: [
-    'vuetify/dist/vuetify.min.css'
+    'vuetify/dist/vuetify.min.css',
+    '~/assets/style/style.scss'
   ],
   router: {
     middleware: ['ssr-cookie']
@@ -60,7 +61,7 @@ const conf = {
     transpile: ['vuetify/lib'],
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {},
-    extend(config, ctx) {
+    extend (config, ctx) {
       isDev = ctx.isDev
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
